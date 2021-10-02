@@ -22,20 +22,20 @@ int main() {
 #else
 	string infile = KP::ORIGINAL_STUDENT_DATA;
 	string outfile = KP::CALCULATED_STUDENT_DATA;
-	
+
 	vector<KP::studentData> allstudentData;
 
 	int iret=readFile(infile,allstudentData);
 	if(iret != KP::SUCCESS)
 		return iret;
-	
+
 	//ignoring return types
 	calculateFinalGrade(allstudentData);
 	sortStudentData(allstudentData,KP::FINAL_GRADE);
-	
+
 	iret = writeFile(outfile,allstudentData);
-	
-    return iret; 
+
+    return iret;
 #endif
 }
 
